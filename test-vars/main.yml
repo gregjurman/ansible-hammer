@@ -1,0 +1,30 @@
+---
+
+foreman_admin_username: admin
+foreman_admin_password: admin
+
+foreman_enabled_plugins:
+    - ansible
+    - ovirt-provision
+    - docker
+
+foreman_disabled_plugins:
+    #
+
+foreman_enabled_compute_plugins:
+    - ovirt
+    - libvirt
+    - ec2
+
+foreman_disabled_compute_plugins:
+    #
+
+foreman_domain: development.test
+
+foreman_proxy_dns_forwarders:
+    - 8.8.8.8
+    - 8.8.4.4
+
+hammer_cli_envvars:
+    FOREMAN_USERNAME: "{{foreman_admin_username}}"
+    FOREMAN_PASSWORD: "{{foreman_admin_password}}"
